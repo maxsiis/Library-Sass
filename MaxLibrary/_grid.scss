@@ -2,7 +2,13 @@
 @use "breakpoints" as *;
 
 $grid-columns: 12;
-
+$grid-gaps: (
+  "0": 0,
+  "1": 10px,
+  "2": 20px,
+  "3": 30px,
+);
+$layout-values: flex-start, flex-end, center, space-between, space-around;
 .container {
   width: 100%;
   max-width: 1200px;
@@ -14,6 +20,22 @@ $grid-columns: 12;
 .row {
   display: flex;
   flex-flow: row wrap;
+}
+
+@each $key, $val in $grid-gaps {
+  .gap-#{$key} > * {
+    padding: $val;
+  }
+  .gap-#{$key} {
+    margin-left: -$val;
+    margin-right: -$val;
+  }
+}
+
+@each $val in $layout-values {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
 }
 
 @include xs {
