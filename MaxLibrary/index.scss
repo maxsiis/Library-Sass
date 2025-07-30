@@ -2,8 +2,9 @@
 @use "_variables";
 @use "_base";
 @use "_colors";
-@use "components/card";
-@use "components/button";
 @use "_utilities";
 @use "_breakpoints";
 @use "_grid";
+@use "components/card";
+@use "components/button";
+@use "components/navbar";
